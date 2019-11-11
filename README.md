@@ -23,6 +23,16 @@
         用于json字符串参数
         例如: {"name": "%E5%B0%8F%E6%98%8E", "age": 12}
 
+## 5. url上的2种请求参数
+    query参数: 
+        路由path: /xxx
+        请求path: /xxx?username=xxx&password=yyy   
+        获取参数: req.query.username / req.query.password
+    param参数: 
+        路由path: /xxx/:username/:password
+        请求path: /xxx/xxx/123   
+        获取参数: req.params.username / req.params.password
+
 ## 5. 常见响应状态码
     200	OK                     请求成功。一般用于GET与POST请求
     201 Created                已创建。成功请求并创建了新的资源
