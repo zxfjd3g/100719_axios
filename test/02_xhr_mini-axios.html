@@ -60,9 +60,9 @@
         // 3. 使用xhr发ajax请求
         const xhr = new XMLHttpRequest()
         xhr.open(method, url, true)
-        if (method==='POST' || method==='PUT') {
-          xhr.send(data)
-        } else {
+        if (method==='POST' || method==='PUT' || method==='DELETE') {
+          xhr.send(data) 
+        } else { // GET
           xhr.send()
         }
 
@@ -152,9 +152,9 @@
       axios({ // 配置对象: 属性名是一些特定名称
         method: 'DELETE',
         url: 'http://localhost:3000/posts/17',
-        // params: {
-        //   title: 'xxxx'
-        // }
+        data: {
+          id: 123232
+        }
       }).then(
         response => {
           console.log(response.data, response.status, response.statusText)
