@@ -8,7 +8,7 @@ app.use(cors())
 // 能解析urlencode格式的post请求体参数
 app.use(express.urlencoded())
 // 能解析json格式的请求体参数
-app.use(express.json())
+// app.use(express.json())
 
 const posts = [
   {
@@ -34,7 +34,9 @@ app.post('/post', (req, res) => {
   const id = Date.now()
   const post = {title, author, id}
   posts.push(post)
-  res.send({status: 0, data: post})
+  setTimeout(() => {
+    res.send({status: 0, data: post})
+  }, 1000);
 })
 
 app.put('/post', (req, res) => {
@@ -42,7 +44,9 @@ app.put('/post', (req, res) => {
   const post = posts.find(post => post.id==id)
   post.title = title
   post.author = author
-  res.send({status: 0})
+  setTimeout(() => {
+    res.send({status: 0})
+  }, 1000);
 })
 
 app.delete('/post', (req, res) => {
