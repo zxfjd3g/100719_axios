@@ -1,4 +1,4 @@
-# axios从入门到源码分析33333
+# axios从入门到源码分析
 
 ## 1. 前后台交互的基本过程
     1. 前后应用从浏览器端向服务器发送HTTP请求(请求报文)
@@ -28,7 +28,7 @@
         路由path: /xxx
         请求path: /xxx?username=xxx&password=yyy   
         获取参数: req.query.username / req.query.password
-    param参数: 
+    params参数: 
         路由path: /xxx/:username/:password
         请求path: /xxx/xxx/123   
         获取参数: req.params.username / req.params.password
@@ -75,6 +75,14 @@
     能处理多种类型的请求: GET/POST/PUT/DELETE
     函数的参数为一个配置对象: url/method/params/data
     响应json数据自动解析为了js
+
+    1. 返回一个promise对象
+    2. 函数参数是一个配置对象
+    3. 创建建xhr对象发ajax请求
+    4. 携带请求参数
+    5. 读取响应数据, 更新promise
+
+
 
 ## 11. axios的特点
     基于promise的封装XHR的异步ajax请求库

@@ -88,6 +88,14 @@
         
       })
     }
+
+    axios.get = function (url, config) {
+      return axios(Object.assign({url}, config))
+    }
+
+    axios.post = function (url, data, config) {
+      return axios(Object.assign({url, data}, config))
+    }
     
   </script>
 
